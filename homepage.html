@@ -95,6 +95,52 @@
         font-style: inherit;
         margin-bottom: 10px;
       }
+      @media (max-width: 768px) {
+        /* Adjust font size for small screens */
+        .first,
+        .second,
+        .third {
+          font-size: 20px;
+        }
+
+        article {
+          font-size: 18px;
+          padding-right: 10px; /* Less padding */
+        }
+
+        .icon-button {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+
+        .top-icons {
+          left: 20px; /* Reduced left margin */
+          bottom: 30px; /* Reduced bottom margin */
+        }
+      }
+
+      @media (max-width: 480px) {
+        /* Further adjustments for extra small screens (phones) */
+        .first,
+        .second,
+        .third {
+          font-size: 18px;
+        }
+
+        article {
+          font-size: 16px;
+        }
+
+        .icon-button {
+          padding: 8px 16px;
+          font-size: 12px;
+        }
+
+        .top-icons {
+          left: 10px;
+          bottom: 20px;
+        }
+      }
     </style>
   </head>
   <body>
