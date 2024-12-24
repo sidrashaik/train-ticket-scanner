@@ -23,7 +23,7 @@
         background-size: contain; /* Ensure the full image is visible */
         background-position: right; /* Center the background */
         background-repeat: no-repeat; /* Prevent tiling */
-        background-attachment: fixed; /* Keep the background fixed */
+        background-attachment: scroll; /* Keep the background fixed */
         position: relative; /* Make the body container a reference for absolute positioning */
       }
 
@@ -96,21 +96,28 @@
         margin-bottom: 10px;
       }
       @media (max-width: 768px) {
+        body {
+          background-position: top;
+          background-size: cover;
+          background-attachment: scroll;
+        }
         /* Adjust font size for small screens */
         .first,
         .second,
         .third {
-          font-size: 20px;
+          font-size: 5vw;
+          text-align: left;
         }
 
         article {
-          font-size: 18px;
-          padding-right: 10px; /* Less padding */
+          font-size: 20px;
+          text-align: left;
+          padding-top: 30px; /* Less padding */
         }
 
         .icon-button {
           padding: 10px 20px;
-          font-size: 14px;
+          font-size: 4vw;
         }
 
         .top-icons {
@@ -120,15 +127,24 @@
       }
 
       @media (max-width: 480px) {
+        body {
+          background-position: top;
+          background-size: cover;
+          background-attachment: scroll;
+        }
         /* Further adjustments for extra small screens (phones) */
         .first,
         .second,
         .third {
           font-size: 18px;
+          text-align: left;
         }
 
         article {
-          font-size: 16px;
+          padding-top: 10px; /* Less padding for phone */
+          text-align: left; /* Center align text on smaller screens */
+          font-size: 16px; /* Smaller font for phone */
+          margin-top: 0;
         }
 
         .icon-button {
