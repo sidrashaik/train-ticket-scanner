@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate Unique QR Code</title>
+    <!-- Include QRCode.js Library from CDN -->
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url("bgtrain.jpg"); /* Background image */
+        background-size: cover;
+        margin: 0;
+      }
+
+      .container {
+        background-color: #fff;
+        padding: 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .qr-code {
+        margin-top: 20px;
+      }
+
+      .home-link {
+        margin-top: 20px;
+        display: inline-block;
+        font-size: 16px;
+        color: #4caf50;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #4caf50;
+        transition: background-color 0.3s ease;
+      }
+
+      .home-link:hover {
+        background-color: #4caf50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Generate Your Unique QR Code</h2>
+
+      <!-- Form to take user input -->
+      <form id="qr-form">
+        <input
+          type="text"
+          id="user-name"
+          placeholder="Enter your name"
+          required
+        /><br /><br />
+        <input
+          type="email"
+          id="user-email"
+          placeholder="Enter your email"
+          required
+        /><br /><br />
+        <input
+          type="text"
+          id="ticket-number"
+          placeholder="Enter your ticket number"
+          required
+        /><br /><br />
+        <button type="submit">Generate QR Code</button>
+      </form>
+
+      <!-- QR Code Section -->
+      <div class="qr-code" id="qr-code"></div>
+
+      <!-- Link back to homepage -->
+      <a href="homepage.html" class="home-link"> Back to Homepage </a>
+    </div>
+
+    <script>
+      // Handle form submission
+      document
+        .getElementById("qr-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get user input values
+          const userName = document.getElementById("user-name").value;
+          const userEmail = document.getElementById("user-email").value;
+          const ticketNumber = document.getElementById("ticket-number").value;
+
+          // Create a unique identifier by combining name, email, and ticket number
+          const userIdentifier = `Name: ${userName}, Email: ${userEmail}, Ticket Number: ${ticketNumber}`;
+
+          // Call the function to generate the QR code
+          generateQRCode(userIdentifier);
+        });
+
+      // Function to generate QR Code
+      function generateQRCode(data) {
+        // Clear previous QR code, if any
+        document.getElementById("qr-code").innerHTML = "";
+
+        // Generate the QR code with the user data (name, email, and ticket number)
+        new QRCode(document.getElementById("qr-code"), {
+          text: data,
+          width: 200, // Width of the QR code
+          height: 200, // Height of the QR code
+          colorDark: "#000000", // Dark color for QR code
+          colorLight: "#ffffff", // Light color for QR code
+          correctLevel: QRCode.CorrectLevel.H, // QR code correction level
+        });
+      }
+    </script>
+  </body>
+</html>

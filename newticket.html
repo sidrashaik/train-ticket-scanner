@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MY TICKET</title>
+    <!-- Link to Google Fonts for better typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* General page styling */
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5; /* Light beige background for elegance */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 30px;
+        color: #333;
+      }
+
+      /* Top Container */
+      .top-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1000px;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+      }
+
+      /* Sentence styling */
+      .username {
+        font-size: 28px;
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        color: #2c3e50;
+        flex: 1;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+      }
+
+      .username em {
+        font-weight: 400;
+        font-size: 24px;
+        color: #f39c12; /* Elegant gold color */
+      }
+
+      /* Homepage Box */
+      .homepage-box {
+        background-color: #2c3e50;
+        padding: 15px;
+        border-radius: 50%;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+      }
+
+      .homepage-box a {
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      .homepage-box a:hover {
+        color: #f39c12; /* Gold color on hover */
+      }
+
+      /* QR Code Image */
+      img {
+        width: 250px;
+        height: auto;
+        margin-top: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        object-fit: cover;
+      }
+
+      /* Payment Methods Box */
+      .pay-box {
+        background-color: #fff;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 1000px;
+        text-align: center;
+      }
+
+      .pay-box a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 15px 30px;
+        background-color: #3498db; /* Elegant blue */
+        border-radius: 25px;
+        font-weight: 500;
+        transition: background-color 0.3s, transform 0.3s ease;
+        text-transform: uppercase;
+      }
+
+      .pay-box a:hover {
+        background-color: #2980b9; /* Darker blue on hover */
+        transform: translateY(-5px); /* Slight lift on hover */
+      }
+
+      /* Links and additional text styling */
+      a {
+        color: #f39c12;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 10px 0;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top Container (Sentence + Icons) -->
+    <div class="top-container">
+      <!-- Sentence -->
+      <p class="username">
+        HELLO PASSENGER'S
+        <em>BOOK YOUR TICKETS HERE!!</em>
+      </p>
+
+      <!-- Homepage Link with Icon -->
+      <div class="homepage-box">
+        <a href="../homepage.html"><i class="fas fa-home"></i></a>
+      </div>
+    </div>
+
+    <!-- QR Code and Ticket Info -->
+    <img src="image.png" alt="Ticket Image" />
+
+    <!-- Payment Methods and QR -->
+    <div class="pay-box">
+      <a href="https://phonepe.com" target="_blank">PHONE PAY</a>
+      <a href="https://pay.google.com" target="_blank">GOOGLE PAY</a>
+      <a href="myqr.html">MY QR</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Details</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      /* Full-screen background for a train journey theme */
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-image: url("bgtrain.jpg"); /* Path to the local image (bgtrain.png) */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+
+      /* Overlay for the background image */
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+        z-index: -1; /* Keep the overlay behind the content */
+      }
+
+      /* Profile container */
+      .profile-container {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.9
+        ); /* White with transparency */
+        padding: 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 100%;
+        max-width: 450px;
+        text-align: center;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      /* Smaller FontAwesome Profile Icon */
+      .profile-icon {
+        font-size: 60px; /* Reduced size of the icon */
+        color: #4caf50; /* Green color */
+        margin-bottom: 20px;
+      }
+
+      .profile-info {
+        text-align: left;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+
+      .profile-info p {
+        margin: 10px 0;
+        font-size: 18px;
+        color: #555;
+      }
+
+      .profile-info strong {
+        color: #333;
+      }
+
+      .profile-info span {
+        color: #666;
+      }
+
+      /* Styling for the homepage link */
+      .home-link {
+        margin-top: 30px;
+        display: inline-block;
+        font-size: 16px;
+        color: #4caf50;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #4caf50;
+        transition: background-color 0.3s ease;
+      }
+
+      .home-link:hover {
+        background-color: #4caf50;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="overlay"></div>
+
+    <div class="profile-container">
+      <!-- Smaller FontAwesome Profile Icon -->
+      <i class="fas fa-user profile-icon"></i>
+
+      <h2>Profile Details</h2>
+
+      <!-- Display Profile Information -->
+      <div class="profile-info">
+        <p><strong>Full Name:</strong> <span id="display-name"></span></p>
+        <p><strong>Phone Number:</strong> <span id="display-phone"></span></p>
+        <p>
+          <strong>Aadhaar Number:</strong> <span id="display-aadhaar"></span>
+        </p>
+        <p><strong>Email:</strong> <span id="display-email"></span></p>
+      </div>
+
+      <!-- Link back to homepage -->
+      <a href="homepage.html" class="home-link">
+        <i class="fas fa-home"></i> Back to Homepage
+      </a>
+    </div>
+
+    <script>
+      // Retrieve profile data from local storage and display it
+      window.onload = function () {
+        const name = localStorage.getItem("name");
+        const phone = localStorage.getItem("phone");
+        const aadhaar = localStorage.getItem("aadhaar");
+        const email = localStorage.getItem("email");
+
+        // Display the data if it exists
+        if (name && phone && aadhaar && email) {
+          document.getElementById("display-name").textContent = name;
+          document.getElementById("display-phone").textContent = phone;
+          document.getElementById("display-aadhaar").textContent = aadhaar;
+          document.getElementById("display-email").textContent = email;
+        } else {
+          document.getElementById("display-name").textContent = "Not available";
+          document.getElementById("display-phone").textContent =
+            "Not available";
+          document.getElementById("display-aadhaar").textContent =
+            "Not available";
+          document.getElementById("display-email").textContent =
+            "Not available";
+        }
+      };
+    </script>
+  </body>
+</html>
