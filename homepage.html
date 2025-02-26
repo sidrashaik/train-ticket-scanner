@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Train Ticket Scanner</title>
+    <!-- Include Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Reset default margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Basic styling */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url("newlogo.png");
+        background-size: contain; /* Ensure full logo visibility */
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* Marquee style */
+      marquee {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+        margin-bottom: 20px;
+      }
+
+      /* Article (Text Section) */
+      article {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        width: 80%;
+        max-width: 600px;
+      }
+
+      .first,
+      .second,
+      .third {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      /* Icons container */
+      .icon-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      /* Icon buttons */
+      .icon-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        color: white;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        width: 200px;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .icon-button i {
+        margin-right: 10px;
+      }
+
+      .icon-button:hover {
+        background-color: blueviolet;
+        color: black;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        body {
+          background-size: 70%;
+          background-position: center;
+        }
+
+        article {
+          width: 90%;
+          font-size: 20px;
+        }
+
+        .icon-button {
+          width: 180px;
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          background-size: 90%;
+          background-position: center bottom;
+        }
+
+        article {
+          width: 95%;
+          font-size: 18px;
+        }
+
+        .icon-container {
+          width: 100%;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .icon-button {
+          width: 160px;
+          padding: 8px 16px;
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <marquee direction="right">TRAIN TICKET SCANNER</marquee>
+
+    <!-- Article Content -->
+    <article>
+      <p class="first">HELLO PASSENGERS</p>
+      <p class="second">WELCOME TO TRAIN TICKET SCANNER</p>
+      <p>HAVE A LOOK AT YOUR QR</p>
+    </article>
+
+    <!-- Icons at the bottom -->
+    <div class="icon-container">
+      <a href="profile-details.html" class="icon-button">
+        <i class="fas fa-user"></i> My Profile
+      </a>
+      <a href="myticket.html" class="icon-button">
+        <i class="fas fa-ticket-alt"></i> Ticket
+      </a>
+      <a href="myqr.html" class="icon-button">
+        <i class="fas fa-qrcode"></i> QR Code
+      </a>
+      <a href="profile-form.html" class="icon-button">
+        <i class="fas fa-sign-in-alt"></i> Sign In
+      </a>
+    </div>
+  </body>
+</html>
